@@ -1,6 +1,6 @@
 # Local settings for the project.
 try:
-    from common import *
+    from settings.common import *
 except ImportError as e:
     raise Exception('settings/common.py not available\n%s\n' % (str(e),))
 
@@ -19,9 +19,9 @@ MEDIA_ROOT = join(PROJECT_DIR, 'media')
 STATIC_ROOT = join(PROJECT_DIR, 'static')
 
 if DEBUG:
-    STATICFILES_DIRS += (
-        string.replace(join(PROJECT_DIR, 'frontend/dev/'), '\\', '/'),
-    )
+    # STATICFILES_DIRS += (
+    #     string.replace(join(PROJECT_DIR, 'frontend/dev/'), '\\', '/'),
+    # )
     CORS_URLS_REGEX = r'.*'
 
 MANAGERS = ADMINS

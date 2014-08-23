@@ -1,6 +1,6 @@
 # Global settings for the project.
 from os.path import join, abspath, dirname
-import string
+# import string
 
 PROJECT_DIR = abspath(join(dirname(__file__), '../../'))
 
@@ -19,9 +19,9 @@ USE_TZ = False
 
 APPEND_SLASH = False
 
-STATICFILES_DIRS = (
-    string.replace(join(PROJECT_DIR, 'frontend/dist/'), '\\', '/'),
-)
+# STATICFILES_DIRS = (
+#     string.replace(join(PROJECT_DIR, 'frontend/dist/'), '\\', '/'),
+# )
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = (
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware', #TODO DESCOMENTAR
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -93,19 +93,19 @@ INSTALLED_APPS = (
     # 'apps.html',
     # 'apps.auth',
 # 3rd Party Apps:
-    'rest_framework',
+    # 'rest_framework',
     'corsheaders',
 )
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
-    ),
-    'PAGINATE_BY': 10,
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    )
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.AllowAny',
+#     ),
+#     'PAGINATE_BY': 10,
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.TokenAuthentication',
+#     )
+# }
 
 LOGGING = {
     'version': 1,
