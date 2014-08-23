@@ -1,0 +1,26 @@
+{
+  "name": "Cordova3Test",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "cocoonjs": "~1.0.0-0.5.0",
+    "cordova": "~3.4.1-0.1.0",
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-less": "~0.11.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-dom-munger": "~3.4.0",
+    "grunt-exec": "~0.4.5",
+    "ios-deploy": "^1.1.0",
+    "load-grunt-tasks": "^0.4.0"
+  },
+  "devDependencies": {}
+}
