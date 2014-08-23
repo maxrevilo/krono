@@ -1,6 +1,4 @@
-#Cordova-CocoonJS Boilerplate
-
-This is a Boilerplate for Cordova-CocoonJS projects.
+#Krono Base Project
 
 #Local Enviroment
 ### Set the enviroment (First time):
