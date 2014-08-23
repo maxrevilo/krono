@@ -6,15 +6,16 @@
     (Graba la tienda, productos, cantidad, referencia y marca de lo que necesitas)
   </p>
 
-  {{!-- {{#unless isRecording}} --}}
-  {{kr-btn-record start='record' stop='stop'}}
-  {{!-- <a class='btn-record' {{action 'record' on='touchStart'}} {{action 'stop' on='touchEnd'}}></a> --}}
-  {{!-- {{else}}
-  <a class='btn-record-stop' {{action 'stop'}}>Stop</a>
-  {{/unless}} --}}
+  {{#unless isRecording}}
+  <a class='btn-record' {{action 'record'}}></a>
+  {{else}}
+  <a class='btn-record btn-record-touch' {{action 'stop'}}>
+    <div class="spinner"></div>
+  </a>
+  {{/unless}}
   <br>
   <button {{action 'play'}}>Play</button>
   <button {{action 'upload'}}>Upload</button>
 
   {{outlet}}
-</div>a
+</div>
