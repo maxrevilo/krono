@@ -42,6 +42,7 @@
 		DE9AA5257F21432082DFFBD4 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A703FEDF8B44B81A93B8A26 /* CDVLocalFilesystem.m */; };
 		9E03F50387ED42D1A5B8295C /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73431BEE00FE465DAAFFA373 /* CDVAssetLibraryFilesystem.m */; };
 		A21154DA245D4B78AF163386 /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDFD0D223594CB6A71D5D71 /* CDVSound.m */; };
+		9A8664D2026D4C59BC7787A5 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC1521E5124BA3A7C3A877 /* CDVFileTransfer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		205B298704CF4F329DF5C31E /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVAssetLibraryFilesystem.h"; path = "org.apache.cordova.file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		5CDFD0D223594CB6A71D5D71 /* CDVSound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSound.m"; path = "org.apache.cordova.media/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		A5D11F94D65F4FCDA88E4A59 /* CDVSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSound.h"; path = "org.apache.cordova.media/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		0DEC1521E5124BA3A7C3A877 /* CDVFileTransfer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVFileTransfer.m"; path = "org.apache.cordova.file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		DD8A9315573D4001B6548989 /* CDVFileTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVFileTransfer.h"; path = "org.apache.cordova.file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 				205B298704CF4F329DF5C31E /* CDVAssetLibraryFilesystem.h */,
 				5CDFD0D223594CB6A71D5D71 /* CDVSound.m */,
 				A5D11F94D65F4FCDA88E4A59 /* CDVSound.h */,
+				0DEC1521E5124BA3A7C3A877 /* CDVFileTransfer.m */,
+				DD8A9315573D4001B6548989 /* CDVFileTransfer.h */,
 			);
 			name = Plugins;
 			path = "KronoApp/Plugins";
@@ -440,6 +445,7 @@
 				DE9AA5257F21432082DFFBD4 /* CDVLocalFilesystem.m in Sources */,
 				9E03F50387ED42D1A5B8295C /* CDVAssetLibraryFilesystem.m in Sources */,
 				A21154DA245D4B78AF163386 /* CDVSound.m in Sources */,
+				9A8664D2026D4C59BC7787A5 /* CDVFileTransfer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

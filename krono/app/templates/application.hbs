@@ -1,11 +1,20 @@
 
-<h1>audio</h1>
+<div class="record-view-wrapper">
+  <h1>Haz tu pedido!</h1>
 
-{{#unless isRecording}}
-<button {{action 'record'}}>Record</button>
-{{else}}
-<button {{action 'stop'}}>Stop</button>
-{{/unless}}
-<button {{action 'play'}}>Play</button>
+  <p>
+    (Graba la tienda, productos, cantidad, referencia y marca de lo que necesitas)
+  </p>
 
-{{outlet}}
+  {{!-- {{#unless isRecording}} --}}
+  {{kr-btn-record start='record' stop='stop'}}
+  {{!-- <a class='btn-record' {{action 'record' on='touchStart'}} {{action 'stop' on='touchEnd'}}></a> --}}
+  {{!-- {{else}}
+  <a class='btn-record-stop' {{action 'stop'}}>Stop</a>
+  {{/unless}} --}}
+  <br>
+  <button {{action 'play'}}>Play</button>
+  <button {{action 'upload'}}>Upload</button>
+
+  {{outlet}}
+</div>a

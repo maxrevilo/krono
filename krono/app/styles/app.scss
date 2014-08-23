@@ -1,0 +1,46 @@
+@import 'vendor/bootstrap-sass-official/assets/stylesheets/bootstrap';
+
+* {
+  font-family: sans-serif, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.record-view-wrapper {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: inline-block;
+  background-image: url('../images/bg-start.jpg');
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 70px;
+  }
+
+  p {
+    font-style: italic;
+    margin: 70px 30px;
+    font-size: 19px;
+  }
+
+  .btn-record {
+    background-image: url('../images/btn-record.png');
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    &.btn-record-touch {
+      background-image: url('../images/btn-record-touch.png');
+    }
+  }
+
+}
