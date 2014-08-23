@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Krono</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/krono.css">
+  </head>
+  <body>
+    <script src="cordova.js"></script>
+    <script>
+      window.KronoENV = {{ENV}};
+      window.EmberENV = window.KronoENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/krono.js"></script>
+    <script>
+      window.Krono = require('krono/app')['default'].create(KronoENV.APP);
+    </script>
+  </body>
+</html>

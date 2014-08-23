@@ -1,0 +1,11 @@
+
+<h1>audio</h1>
+
+{{#unless isRecording}}
+<button {{action 'record'}}>Record</button>
+{{else}}
+<button {{action 'stop'}}>Stop</button>
+{{/unless}}
+<button {{action 'play'}}>Play</button>
+
+{{outlet}}
