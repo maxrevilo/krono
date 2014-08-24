@@ -31,7 +31,7 @@ def login(request):
         else:
             return HttpResponseForbidden(json.dumps(form.errors), mimetype='application/json')
 
-        response = user.serialize(user)
+        response = {'username': request.user.username}
 
         httpResponse = HttpResponse(json.dumps(response), mimetype='application/json')
 
