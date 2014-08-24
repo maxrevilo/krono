@@ -1,44 +1,24 @@
 
-
 <div class="record-view-wrapper">
+  
   <h1>Pedido en proceso</h1>
 
   <p>
     (Espera mientras verificamos tu orden)
   </p>
 
-  <h2>{{model.status}}</h2>
-{{!-- 
-  {{#each message in model.messages}}
-  <p>{{message.user_id}}</p>
-  <p>{{message.file}}</p>
-  {{/each}}
+  {{!-- <h2>{{model.status}}</h2>
 
-  {{#link-to 'order.evaluate'}}Ev{{/link-to}} --}}
   <a {{action 'updateOrder'}}>
     <h2>Refresh</h2>
   </a>
   <a {{action 'forceReady'}}>
     <h2>Force ready</h2>
-  </a>
+  </a> --}}
 
-  {{!-- {{#link-to 'order' class='btn-stop-order'}}
-    Cancelar pedido
-  {{/link-to}} --}}
   <a {{action 'cancelOrder' model}} class='btn-stop-order'>
     Cancelar pedido
   </a>
-
-  {{#unless isRecording}}
-  {{!-- <a class='btn-record btn-record-pending'></a> --}}
-{{!--   {{else}}
-  <a class='btn-record btn-record-pending' {{action 'stop'}}>
-    <div class="spinner"></div>
-  </a> --}}
-  {{/unless}}
-{{!--   <br>
-  <button {{action 'play'}}>Play</button>
-  <button {{action 'upload'}}>Upload</button> --}}
 
 </div>
 
