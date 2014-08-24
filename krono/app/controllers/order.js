@@ -63,7 +63,7 @@ export default Ember.Controller.extend({
         mediaRec.stopRecord();
       }
 
-      // this.transitionToRoute('pending');
+      this.send('upload');
 
     },
 
@@ -82,14 +82,13 @@ export default Ember.Controller.extend({
 
     upload: function() {
 
-
-      // !! Assumes variable fileURL contains a valid URL to a text file on the device,
-      //    for example, cdvfile://localhost/persistent/path/to/file.txt
+      var self = this;
 
       var win = function (r) {
           console.log("Code = " + r.responseCode);
           console.log("Response = " + r.response);
           console.log("Sent = " + r.bytesSent);
+          self.transitionToRoute('pending');
       }
 
       var fail = function (error) {
@@ -109,25 +108,13 @@ export default Ember.Controller.extend({
       options.params = params;
 
       window.resolveLocalFileSystemURL('file:///storage/emulated/0/' + this.get('fileSrc'), function(fileEntry) {
-            // alert("full: " + JSON.stringify(fileEntry));
-            var realUrl = fileEntry.toURL();
-            console.log("real URL", realUrl);
+        var realUrl = fileEntry.toURL();
+        console.log("real URL", realUrl);
 
-            var ft = new FileTransfer();
-            ft.upload(realUrl, encodeURI("https://krono-market.herokuapp.com/orders/"), win, fail, options);
+        var ft = new FileTransfer();
+        ft.upload(realUrl, encodeURI("https://krono-market.herokuapp.com/orders/"), win, fail, options);
 
-        });
-
-      // console.log('********* ********* ********* *********');
-      // console.log(window.resolveLocalFileSystemURL(cordova.file.tempDirectory) + this.get('fileSrc'))
-      // console.log(window.LocalFileSystem.TEMPORARY + this.get('fileSrc'));
-      // console.log(LocalFileSystem.TEMPORARY + this.get('fileSrc'));
-
-      // var ft = new FileTransfer();
-      // ft.upload('/storage/emulated/0/' + this.get('fileSrc'), encodeURI("https://krono-market.herokuapp.com/orders/1/messages"), win, fail, options);
-      // ft.upload(this.get('fileSrc'), encodeURI("https://krono-market.herokuapp.com/orders/"), win, fail, options);
-
-
+      });
     },
 
   },
