@@ -4,11 +4,11 @@ export default Ember.Controller.extend({
 
   isRecording: false,
   fileSrc: function() {
-    // var url = '/myApp/tmprecording.amr';
-    // console.log('**************** **************** ****************');
-    // console.log(url);
-    // return url;
-    return 'tmprecording.amr';
+    var url = window.resolveLocalFileSystemURL(cordova.file.dataDirectory) + 'tmprecording.amr';
+    console.log('**************** **************** ****************');
+    console.log(url);
+    return url;
+    // return 'tmprecording.amr';
 
     // function createMedia(recordFileName,onMediaCreated){
     //   if (mediaVar != null) {
@@ -62,7 +62,7 @@ export default Ember.Controller.extend({
         mediaRec.stopRecord();
       }
 
-      this.transitionToRoute('pending');
+      // this.transitionToRoute('pending');
 
     },
 
@@ -102,13 +102,18 @@ export default Ember.Controller.extend({
       options.fileName = "tmprecording.amr";
       options.mimeType = "audio/AMR";
 
-      // var params = {};
-      // params.value1 = "test";
-      // params.value2 = "param";
-      // options.params = params;
+      var params = {};
+      params.type = "AUDIO";
+      options.params = params;
+
+      // console.log('********* ********* ********* *********');
+      // console.log(window.resolveLocalFileSystemURL(cordova.file.tempDirectory) + this.get('fileSrc'))
+      // console.log(window.LocalFileSystem.TEMPORARY + this.get('fileSrc'));
+      // console.log(LocalFileSystem.TEMPORARY + this.get('fileSrc'));
 
       var ft = new FileTransfer();
-      ft.upload(this.get('fileSrc'), encodeURI("http://some.server.com/upload.php"), win, fail, options);
+      // ft.upload('/storage/emulated/0/' + this.get('fileSrc'), encodeURI("https://krono-market.herokuapp.com/orders/1/messages"), win, fail, options);
+      ft.upload(this.get('fileSrc'), encodeURI("https://krono-market.herokuapp.com/orders/1/messages"), win, fail, options);
 
 
     },

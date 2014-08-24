@@ -1,0 +1,62 @@
+
+<div class="record-view-wrapper">
+
+  {{#if annotations}}
+  <div class="container annotations-wrapper">
+    <h2>Anotaciones</h2>
+    <ul>
+      {{#each annotation in annotations}}
+      <li>
+        {{annotation}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+
+  <div class="container products-wrapper">
+    <div class="row">
+      {{#each product in products}}
+        <a class="col-xs-4 product-col">
+          <div class="image-wrapper">
+            {{#x-background imgSource=product.image}}{{/x-background}}
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+
+
+  <div class="bottom-buttons container">
+    <div class="row total-price">
+      <div class="col-xs-3">
+        Valor
+      </div>
+      <div class="col-xs-9 total-price-value">
+        $23.500
+      </div>
+    </div>
+    <div class="col-xs-4">
+      
+      <a class='btn-cancel-order'></a>
+
+    </div>
+    <div class="col-xs-4">
+
+      {{#unless isRecording}}
+      <a class='btn-record' {{action 'record'}}></a>
+      {{else}}
+      <a class='btn-record btn-record-touch' {{action 'stop'}}>
+        <div class="spinner"></div>
+      </a>
+      {{/unless}}
+
+    </div>
+    <div class="col-xs-4">
+      
+      <a class='btn-accept-order'></a>
+
+    </div>
+  </div>
+
+</div>
