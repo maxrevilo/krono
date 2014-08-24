@@ -1,6 +1,6 @@
 # Local settings for the project.
 try:
-    from master_module.settings.common import *
+    from krono.settings.common import *
 except ImportError as e:
     raise Exception('settings/common.py not available\n%s\n' % (str(e),))
 
@@ -16,8 +16,8 @@ ADMINS = (
 
 INSTALLED_APPS += ('south',)
 
-MEDIA_URL = '/media/'
-STATIC_URL = '/static/'
+MEDIA_URL = 'media/'
+STATIC_URL = 'static/'
 MEDIA_ROOT = join(PROJECT_DIR, 'media')
 STATIC_ROOT = join(PROJECT_DIR, 'static')
 

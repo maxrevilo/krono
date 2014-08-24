@@ -1,6 +1,6 @@
 # Local settings for the project.
 try:
-    from master_module.settings.common import *
+    from krono.settings.common import *
 except ImportError as e:
     raise Exception('settings/common.py not available\n%s\n' % (str(e),))
 
@@ -9,17 +9,17 @@ import dj_database_url
 
 
 #Don't use trailing slash!
-BASE_URL = 'https://kronomarket.herokuapp.com'
+BASE_URL = 'https://krono-market.herokuapp.com/'
 
 ADMINS = (
-    ('Oliver Perez', 'oliver.a.perez.c@gmail.com'),
+    ('Krono', 'kronomarket@gmail.com'),
 )
 
 MIDDLEWARE_CLASSES += ('libs.middlewares.ssl_middleware.SSLMiddleware',)
 INSTALLED_APPS += ('south',)
 
-MEDIA_URL = '/media/'
-STATIC_URL = '/static/'
+MEDIA_URL = 'media/'
+STATIC_URL = 'static/'
 MEDIA_ROOT = join(PROJECT_DIR, 'media')
 STATIC_ROOT = join(PROJECT_DIR, 'static')
 

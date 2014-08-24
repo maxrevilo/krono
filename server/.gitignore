@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 
-*.py.dist
+settings/dev.py
+
+*.sqlite
 
 media/

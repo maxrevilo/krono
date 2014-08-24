@@ -1,1 +1,1 @@
-web: gunicorn master_module.wsgi
+web: gunicorn krono.wsgi --log-file -
