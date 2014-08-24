@@ -16,30 +16,20 @@ class OrderListView(View):
                             mimetype='application/json')
 
     def post(self, request, *args, **kwargs):
-        # user_liker = request.user
-        # user_liked = get_object_or_404(User, id=kwargs['id'])
+        print '+ + + + + + + + + '+str(request.POST)+' ---- '+str(request.FILES)
+        order = Order.objects.create_order(user=request.user)
+        order.save()
+        if order.number is None:
+            raise Exception("No se creo el numero :(")
 
-        # try:
-        #     like = Like(
-        #         liker     = user_liker,
-        #         liked     = user_liked,
-        #         anonymous = request.POST.get('anonym') == "true"
-        #     )
-        #     like.save()
+        order.add_message(user=request.user, type=request.POST.get('type'), args=request.FILES)
 
-        #     response = like.serialize(user_liker)
+        order = Order.objects.get(pk=order.pk)
 
-        #     #---------****---  PUSH  ---****---------#
-        #     yg_pm = BarachielPushManager()
-        #     yg_pm.set_like(like)
-        #     yg_pm.send()
+        response = order.serialize(request.user)
 
-        #     return HttpResponse(json.dumps(response),
-        #                         mimetype='application/json')
-
-        # except IntegrityError:
-        #     #TODO si ya existe pero con anonymous distinto actualizar.
-        return HttpResponseBadRequest("Already Waved")
+        return HttpResponse(json.dumps(response),
+                            mimetype='application/json')
 
 
 class OrderView(View):
@@ -74,15 +64,9 @@ class OrderMessageListView(View):
         if not request.user.is_staff or order.user != request.user:
             raise Exception("Not allowed")
 
-        tp = request.POST.get('type')
+        amsg = order.add_message(user=request.user, type=request.POST.get('type'), args=request.FILES)
 
-        if tp == "AUDIO":
-            amsg = AudioMessage(file=request.FILES['file'], user=request.user, order=order)
-            amsg.save()
+        response = amsg.serialize(request.user)
 
-            response = amsg.serialize(request.user)
-
-            return HttpResponse(json.dumps(response),
-                                mimetype='application/json')
-
-        return HttpResponseBadRequest("Error with arguments")
+        return HttpResponse(json.dumps(response),
+                            mimetype='application/json')

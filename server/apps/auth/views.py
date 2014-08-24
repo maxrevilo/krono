@@ -49,19 +49,23 @@ def logout(request):
 @never_cache
 def auto_signup(request):
     if request.method == "POST":
-        password = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))
-        username = 'user' + ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
+        resp = None
+        if request.user.is_authenticated():
+            resp = {'username': request.user.username}
+        else:
+            password = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))
+            username = 'user' + ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
 
-        new_user = User.objects.create_user(username, username+'@fake.com', password)
-        new_user.save()
-        new_user = authenticate(username=username, password=password)
+            new_user = User.objects.create_user(username, username+'@fake.com', password)
+            new_user.save()
+            new_user = authenticate(username=username, password=password)
 
-        auth_login(request, new_user)
+            auth_login(request, new_user)
 
-        resp = {
-            'username': username,
-            'password': password,
-        }
+            resp = {
+                'username': username,
+                'password': password,
+            }
         return HttpResponse(json.dumps(resp), mimetype='application/json')
     else:
         return HttpResponseNotAllowed()

@@ -6,10 +6,10 @@ from apps.base.models import BaseModel
 
 
 class OrderManager(models.Manager):
-    def create_order(self):
+    def create_order(self, user):
         N = 6
-        order = self.create()
-        order.number = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
+        number = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
+        order = self.create(user=user, number=number)
         return order
 
 
@@ -30,11 +30,22 @@ class Order(BaseModel):
     #Object Manager
     objects = OrderManager()
 
+    def add_message(self, user, type, args):
+        if type == "AUDIO":
+            amsg = AudioMessage(file=args['file'], user=user, order=self)
+            amsg.save()
+            return amsg
+        else:
+            raise Exception("Type not suppoted")
+
     def serialize(self, user):
+        msg_srl = lambda msg: msg.audiomessage if hasattr(msg, 'audiomessage') else (msg.textmessage if hasattr(msg, 'textmessage') else msg)
+
         result = {
             'number': self.number,
             'user_id': self.user.id,
             'status': self.id,
+            'messages':  map(lambda m: msg_srl(m).serialize(user), self.messages.all()),
             '_created_at': self._created_at.isoformat(),
         }
         return result
