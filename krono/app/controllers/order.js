@@ -4,7 +4,8 @@ export default Ember.Controller.extend({
 
   isRecording: false,
   fileSrc: function() {
-    var url = window.resolveLocalFileSystemURL(cordova.file.dataDirectory) + 'tmprecording.amr';
+    // var url = window.resolveLocalFileSystemURL(cordova.file.dataDirectory) + 'tmprecording.amr';
+    var url = 'tmprecording.amr';
     console.log('**************** **************** ****************');
     console.log(url);
     return url;
@@ -101,19 +102,30 @@ export default Ember.Controller.extend({
       options.fileKey = "file";
       options.fileName = "tmprecording.amr";
       options.mimeType = "audio/AMR";
+      options.chunkedMode = false;
 
       var params = {};
-      params.type = "AUDIO";
+      params['type'] = "AUDIO";
       options.params = params;
+
+      window.resolveLocalFileSystemURL('file:///storage/emulated/0/' + this.get('fileSrc'), function(fileEntry) {
+            // alert("full: " + JSON.stringify(fileEntry));
+            var realUrl = fileEntry.toURL();
+            console.log("real URL", realUrl);
+
+            var ft = new FileTransfer();
+            ft.upload(realUrl, encodeURI("https://krono-market.herokuapp.com/orders/"), win, fail, options);
+
+        });
 
       // console.log('********* ********* ********* *********');
       // console.log(window.resolveLocalFileSystemURL(cordova.file.tempDirectory) + this.get('fileSrc'))
       // console.log(window.LocalFileSystem.TEMPORARY + this.get('fileSrc'));
       // console.log(LocalFileSystem.TEMPORARY + this.get('fileSrc'));
 
-      var ft = new FileTransfer();
+      // var ft = new FileTransfer();
       // ft.upload('/storage/emulated/0/' + this.get('fileSrc'), encodeURI("https://krono-market.herokuapp.com/orders/1/messages"), win, fail, options);
-      ft.upload(this.get('fileSrc'), encodeURI("https://krono-market.herokuapp.com/orders/1/messages"), win, fail, options);
+      // ft.upload(this.get('fileSrc'), encodeURI("https://krono-market.herokuapp.com/orders/"), win, fail, options);
 
 
     },
