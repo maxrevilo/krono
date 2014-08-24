@@ -88,7 +88,18 @@ export default Ember.Controller.extend({
           console.log("Code = " + r.responseCode);
           console.log("Response = " + r.response);
           console.log("Sent = " + r.bytesSent);
-          self.transitionToRoute('pending');
+
+          // {"messages": [{"order_number": "CRDJJ7", "user_id": 50, "_created_at": "2014-08-24T05:28:58.462489", "file": "media/2014/08/24/messages/audio/tmprecording_0MWeO4H.amr"}], "user_id": 50, "_created_at": "2014-08-24T05:28:58.431410", "status": 80, "number": "CRDJJ7"}:
+
+          var res = JSON.parse(r.response);
+
+          var params = {
+            id: res.id,
+            status: res.status
+          };
+
+          var order = self.store.push('order', params);
+          self.transitionToRoute('order.pending', order);
       }
 
       var fail = function (error) {

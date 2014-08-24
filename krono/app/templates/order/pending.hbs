@@ -9,9 +9,12 @@
 
   {{#link-to 'evaluate'}}Ev{{/link-to}}
 
-  {{#link-to 'order' class='btn-stop-order'}}
+  {{!-- {{#link-to 'order' class='btn-stop-order'}}
     Cancelar pedido
-  {{/link-to}}
+  {{/link-to}} --}}
+  <a {{action 'cancelOrder'}} class='btn-stop-order'>
+    Cancelar pedido
+  </a>
 
   {{#unless isRecording}}
   {{!-- <a class='btn-record btn-record-pending'></a> --}}

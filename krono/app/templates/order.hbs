@@ -1,28 +1,2 @@
 
-<div class="record-view-wrapper">
-  <h1>¡Haz tu pedido!</h1>
-
-  <p>
-    Graba la tienda y los productos con:<br><br>
-
-    Cantidad<br>
-    Marca<br>
-    Sabor<br>
-    Tamaño
-  </p>
-
-  <div class="bottom-order">
-    <p>Máximo 20 ítems</p>
-    {{#unless isRecording}}
-    <a class='btn-record' {{action 'record'}}></a>
-    {{else}}
-    <a class='btn-record btn-record-touch' {{action 'stop'}}>
-      <div class="spinner"></div>
-    </a>
-    {{/unless}}
-  </div>
-  {{!-- <br>
-  <button {{action 'play'}}>Play</button>
-  <button {{action 'upload'}}>Upload</button> --}}
-
-</div>
+{{outlet}}

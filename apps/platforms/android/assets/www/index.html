@@ -9,17 +9,17 @@
 
     
 
-    <link rel="stylesheet" href="assets/vendor-9af50ee891c820d9f610b5bca1e4e3ff.css">
-    <link rel="stylesheet" href="assets/krono-ee3d28d56f158c41b3bc8a23453ebfa9.css">
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/krono.css">
   </head>
   <body>
     <script src="cordova.js"></script>
     <script>
-      window.KronoENV = {"environment":"production","baseURL":"/","locationType":"hash","EmberENV":{"FEATURES":{}},"APP":{}};
+      window.KronoENV = {"environment":"development","baseURL":"/","locationType":"hash","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":true,"LOG_VIEW_LOOKUPS":true}};
       window.EmberENV = window.KronoENV.EmberENV;
     </script>
-    <script src="assets/vendor-99bcabc2cc1239091813b67858d3ca46.js"></script>
-    <script src="assets/krono-d77391807fc3847407c6310ac8c92c5f.js"></script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/krono.js"></script>
     <script>
       window.Krono = require('krono/app')['default'].create(KronoENV.APP);
     </script>

@@ -5,8 +5,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('order');
-  this.route('pending');
+  this.route('ordering');
+  this.resource('order', { path: '/order/:post_id' }, function() {
+    this.route('pending');
+  });
   this.route('evaluate');
 });
 
