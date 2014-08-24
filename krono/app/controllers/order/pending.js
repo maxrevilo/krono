@@ -74,4 +74,25 @@ export default Ember.Controller.extend({
   //   },
   // },
 
+  actions: {
+    forceReady: function() {
+
+      var self = this;
+      var order = this.get('model');
+
+      var url = 'https://krono-market.herokuapp.com/orders/' + order.id;
+      Ember.$.ajax({
+        url: url,
+        type: 'PUT',
+        data: {
+          status: 1
+        },
+        complete: function() {
+          console.log('Forced ready');
+        }
+      });
+
+    },
+  },
+
 });
