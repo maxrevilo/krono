@@ -14,6 +14,8 @@
   </div>
   {{/if}}
 
+  {{model.status}}
+
   <div class="container products-wrapper">
     <div class="row">
       {{#each product in products}}
@@ -38,7 +40,7 @@
     </div>
     <div class="col-xs-4">
       
-      <a {{action 'cancelOrder'}} class='btn-cancel-order'></a>
+      <a {{action 'cancelOrder' model}} class='btn-cancel-order'></a>
 
       {{!-- {{#link-to 'order' class='btn-cancel-order'}}{{/link-to}} --}}
 
@@ -58,7 +60,7 @@
       
       {{!-- {{#link-to 'order.pickup' class='btn-accept-order'}}{{/link-to}} --}}
 
-      <a {{action 'acceptOrder'}} class='btn-accept-order'></a>
+      <a {{action 'acceptOrder' model}} class='btn-accept-order'></a>
 
       {{!-- <a class='btn-accept-order'></a> --}}
 

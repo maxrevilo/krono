@@ -38,9 +38,9 @@ export default Ember.Route.extend({
 
   actions: {
 
-    cancelOrder: function() {
+    cancelOrder: function(order) {
       var self = this;
-      var order = this.get('model');
+      // var order = this.get('model');
       console.log('Order = ' + JSON.stringify(order));
 
       var url = 'https://krono-market.herokuapp.com/orders/' + order.id;
@@ -60,10 +60,10 @@ export default Ember.Route.extend({
       });
     },
 
-    acceptOrder: function() {
-      alert('Accept')
+    acceptOrder: function(order) {
+      // alert('Accept')
       var self = this;
-      var order = this.get('model');
+      // var order = this.get('model');
       console.log('Order = ' + JSON.stringify(order));
 
       var url = 'https://krono-market.herokuapp.com/orders/' + order.id;
@@ -74,7 +74,7 @@ export default Ember.Route.extend({
           status: 4
         },
         complete: function() {
-          alert('accepted 4')
+          // alert('accepted 4')
         }
       });
     },
