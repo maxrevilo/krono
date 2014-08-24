@@ -6,10 +6,10 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('ordering');
-  this.resource('order', { path: '/order/:post_id' }, function() {
+  this.resource('order', { path: '/order/:order_id' }, function() {
     this.route('pending');
+    this.route('evaluate');
   });
-  this.route('evaluate');
 });
 
 export default Router;

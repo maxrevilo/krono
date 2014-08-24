@@ -92,10 +92,20 @@ export default Ember.Controller.extend({
           // {"messages": [{"order_number": "CRDJJ7", "user_id": 50, "_created_at": "2014-08-24T05:28:58.462489", "file": "media/2014/08/24/messages/audio/tmprecording_0MWeO4H.amr"}], "user_id": 50, "_created_at": "2014-08-24T05:28:58.431410", "status": 80, "number": "CRDJJ7"}:
 
           var res = JSON.parse(r.response);
+          var messages_ids = [];
+          res.messages.forEach(function(message) {
+            self.store.push('message', {
+              id: message.id,
+              user_id: message.user_id,
+              file: message.file
+            });
+            messages_ids.push(message.id);
+          });
 
           var params = {
             id: res.id,
-            status: res.status
+            status: res.status,
+            messages: messages_ids
           };
 
           var order = self.store.push('order', params);

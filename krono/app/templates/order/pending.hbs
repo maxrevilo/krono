@@ -7,7 +7,17 @@
     (Espera mientras verificamos tu orden)
   </p>
 
-  {{#link-to 'evaluate'}}Ev{{/link-to}}
+  <h2>{{model.status}}</h2>
+{{!-- 
+  {{#each message in model.messages}}
+  <p>{{message.user_id}}</p>
+  <p>{{message.file}}</p>
+  {{/each}}
+
+  {{#link-to 'order.evaluate'}}Ev{{/link-to}} --}}
+  <a {{action 'updateOrder'}}>
+    <h2>Refresh</h2>
+  </a>
 
   {{!-- {{#link-to 'order' class='btn-stop-order'}}
     Cancelar pedido

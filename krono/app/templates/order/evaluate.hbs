@@ -38,7 +38,9 @@
     </div>
     <div class="col-xs-4">
       
-      {{#link-to 'order' class='btn-cancel-order'}}{{/link-to}}
+      <a {{action 'cancelOrder' class='btn-cancel-order'}}></a>
+
+      {{!-- {{#link-to 'order' class='btn-cancel-order'}}{{/link-to}} --}}
 
     </div>
     <div class="col-xs-4">
