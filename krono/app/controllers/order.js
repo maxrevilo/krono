@@ -62,6 +62,8 @@ export default Ember.Controller.extend({
         mediaRec.stopRecord();
       }
 
+      this.transitionToRoute('pending');
+
     },
 
     play: function() {

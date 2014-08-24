@@ -4,13 +4,18 @@
   font-family: sans-serif, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+html, body, body > .ember-view, body > .ember-view, body > .ember-view > .ember-view, body > .ember-view > .ember-view > .ember-view {
+  height: 100%;
+}
+
 .record-view-wrapper {
   text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100%;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
 
   display: inline-block;
   background-image: url('../images/bg-start.jpg');
@@ -40,6 +45,27 @@
     height: 100px;
     &.btn-record-touch {
       background-image: url('../images/btn-record-touch.png');
+    }
+    &.btn-record-pending {
+      background-image: url('../images/btn-record-pending.png');
+    }
+  }
+
+  .btn-cancel-order {
+    $bg-color: red;
+    width: 100%;
+    background: $bg-color;
+    display: block;
+    line-height: 55px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 21px;
+    position: absolute;
+    bottom: 0;
+    &:hover, &:active {
+      background-color: lighten($bg-color, 15%);
+      text-decoration: none;
     }
   }
 
