@@ -4634,6 +4634,33 @@ html, body, body > .ember-view, body > .ember-view, body > .ember-view > .ember-
     position: absolute;
     bottom: 46px;
     width: 100%; }
+  .record-view-wrapper .bottom-pickup {
+    position: absolute;
+    bottom: 0px;
+    width: 100%; }
+    .record-view-wrapper .bottom-pickup p {
+      margin-bottom: 30px; }
+    .record-view-wrapper .bottom-pickup .btns-pickup {
+      width: 100%; }
+      .record-view-wrapper .bottom-pickup .btns-pickup a {
+        float: left;
+        display: block;
+        width: 50%;
+        line-height: 55px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 21px; }
+      .record-view-wrapper .bottom-pickup .btns-pickup a:first-child {
+        background-color: #708101; }
+        .record-view-wrapper .bottom-pickup .btns-pickup a:first-child:hover, .record-view-wrapper .bottom-pickup .btns-pickup a:first-child:active {
+          background-color: #b5cd02;
+          text-decoration: none; }
+      .record-view-wrapper .bottom-pickup .btns-pickup a:last-child {
+        background-color: #9fb701; }
+        .record-view-wrapper .bottom-pickup .btns-pickup a:last-child:hover, .record-view-wrapper .bottom-pickup .btns-pickup a:last-child:active {
+          background-color: #e1fe07;
+          text-decoration: none; }
   .record-view-wrapper .bottom-buttons {
     width: 100%;
     font-size: 25px; }

@@ -11,6 +11,14 @@ export default Ember.Controller.extend({
     });
   }.on('init'),
 
+  transitionObserver: function() {
+    var status = this.get('model.status');
+
+    if (status === 4) {
+      this.transitionToRoute('order.pickup', this.get('model'));
+    }
+  }.observes('model.status'),
+
   annotations: [
     'No tenemos Coca Cola, tenemos Pepsi.',
     'No tenemos Leche Entera, tenemos Leche deslactosada'

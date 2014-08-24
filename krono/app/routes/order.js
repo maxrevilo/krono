@@ -37,6 +37,7 @@ export default Ember.Route.extend({
   },
 
   actions: {
+
     cancelOrder: function() {
       var self = this;
       var order = this.get('model');
@@ -58,6 +59,26 @@ export default Ember.Route.extend({
         }
       });
     },
+
+    acceptOrder: function() {
+      alert('Accept')
+      var self = this;
+      var order = this.get('model');
+      console.log('Order = ' + JSON.stringify(order));
+
+      var url = 'https://krono-market.herokuapp.com/orders/' + order.id;
+      Ember.$.ajax({
+        url: url,
+        type: 'PUT',
+        data: {
+          status: 4
+        },
+        complete: function() {
+          alert('accepted 4')
+        }
+      });
+    },
+
   },
 
 });

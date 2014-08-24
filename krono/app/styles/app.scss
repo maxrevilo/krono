@@ -76,6 +76,44 @@ html, body, body > .ember-view, body > .ember-view, body > .ember-view > .ember-
     width: 100%;
   }
 
+  .bottom-pickup {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    p {
+      margin-bottom: 30px;
+    }
+    .btns-pickup {
+      width: 100%;
+      a {
+        float: left;
+        display: block;
+        width: 50%;
+        line-height: 55px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 21px;
+      }
+      a:first-child {
+        $bg-color: #708101;
+        background-color: $bg-color;
+        &:hover, &:active {
+          background-color: lighten($bg-color, 15%);
+          text-decoration: none;
+        }
+      }
+      a:last-child {
+        $bg-color: #9fb701;
+        background-color: $bg-color;
+        &:hover, &:active {
+          background-color: lighten($bg-color, 15%);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
   .bottom-buttons {
     // position: absolute;
     // bottom: 16px;

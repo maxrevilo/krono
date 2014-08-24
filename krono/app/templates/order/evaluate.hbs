@@ -56,7 +56,11 @@
     </div>
     <div class="col-xs-4">
       
-      <a class='btn-accept-order'></a>
+      {{!-- {{#link-to 'order.pickup' class='btn-accept-order'}}{{/link-to}} --}}
+
+      <a {{action 'acceptOrder'}} class='btn-accept-order'></a>
+
+      {{!-- <a class='btn-accept-order'></a> --}}
 
     </div>
   </div>

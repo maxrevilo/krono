@@ -2,14 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  transitionObserver: function() {
-    var status = this.get('model.status');
-
-    if (status == '1') {
-      this.transitionToRoute('order.evaluate', this.get('model'));
-    }
-  }.observes('model.status'),
-
   updateOrder: function() {
     var self = this;
     var order = this.get('model');
@@ -47,6 +39,14 @@ export default Ember.Controller.extend({
       }
     });
   },
+
+  transitionObserver: function() {
+    var status = this.get('model.status');
+
+    if (status === 1) {
+      this.transitionToRoute('order.evaluate', this.get('model'));
+    }
+  }.observes('model.status'),
 
   // actions: {
   //   cancelOrder: function() {

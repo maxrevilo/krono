@@ -9,7 +9,11 @@ Router.map(function() {
   this.resource('order', { path: '/order/:order_id' }, function() {
     this.route('pending');
     this.route('evaluate');
+    this.route('pickup');
   });
+
+
+
 });
 
 export default Router;

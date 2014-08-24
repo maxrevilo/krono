@@ -55,83 +55,83 @@ Product.reopenClass({
       price: '2800',
       image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
     },
-    {
-      id: 7,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 8,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 9,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 10,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 11,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 12,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 14,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 15,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 16,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 17,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
-    {
-      id: 18,
-      name: 'Pepsi',
-      count: 1,
-      price: '2800',
-      image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
-    },
+    // {
+    //   id: 7,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 8,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 9,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 10,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 11,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 12,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 14,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 15,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 16,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 17,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
+    // {
+    //   id: 18,
+    //   name: 'Pepsi',
+    //   count: 1,
+    //   price: '2800',
+    //   image: 'http://gobazzar.com/media/catalog/product/cache/1/image/1200x1200/885089b4fd45a57099033f14537e3ee7/p/e/pepsi_600_ml.jpg'
+    // },
   ]
 });
 
